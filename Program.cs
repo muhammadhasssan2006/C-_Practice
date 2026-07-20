@@ -701,44 +701,124 @@
 
 // ---------------------------- Abstraction --------------------
 
-abstract class Payment
-{
-    public abstract void Pay();
+// abstract class Payment
+// {
+//     public abstract void Pay();
 
-}
-class CreditCard : Payment
+// }
+// class CreditCard : Payment
+// {
+//     public override void Pay()
+//     {
+//         Console.WriteLine("Payment using Credit card");
+//     }
+// }
+// class JazzCash : Payment
+// {
+//     public override void Pay()
+//     {
+//         Console.WriteLine("Payment using JazzCash");
+//     }
+
+// }
+// class Easypaisa : Payment
+// {
+//     public override void Pay()
+//     {
+//         Console.WriteLine("Payment using Easypaisa");
+//     }
+// }
+
+// class Program
+// {
+//     static void Main()
+//     {
+
+//         CreditCard cc = new CreditCard();
+//         cc.Pay();
+//         JazzCash jz = new JazzCash();
+//         jz.Pay();
+//         Easypaisa ep = new Easypaisa();
+//         ep.Pay();
+//     }
+// }
+
+// =============================================================
+//          Smart Hospital Management System
+// =============================================================
+
+abstract class Employee
 {
-    public override void Pay()
+
+    private string Name = "";
+    private int Id;
+
+    public string name
     {
-        Console.WriteLine("Payment using Credit card");
+        get { return Name; }
+        set { Name = value; }
+    }
+    public int id
+    {
+        get { return Id; }
+        set { Id = value; }
+    }
+    public abstract void Work();
+}
+class Doctor : Employee
+{
+    private string Specialization = "";
+    public string specs
+    {
+        get { return Specialization; }
+        set { Specialization = value; }
+    }
+    public void TreatPatient()
+    {
+        Console.WriteLine("Doctor is treating a patient.");
+
+    }
+    public override void Work()
+    {
+        Console.WriteLine("Doctor is working.");
+
     }
 }
-class JazzCash : Payment
+class Nurse : Employee
 {
-    public override void Pay()
+    private string shift = "";
+    public string Shift
     {
-        Console.WriteLine("Payment using JazzCash");
+        get { return shift; }
+        set { shift = value; }
+    }
+    public void AssistDoctor()
+    {
+        Console.WriteLine("Nurse is assisting the doctor.");
+
+    }
+    public override void Work()
+    {
+        Console.WriteLine("Nurse is working.");
     }
 
-}
-class Easypaisa : Payment
-{
-    public override void Pay()
-    {
-        Console.WriteLine("Payment using Easypaisa");
-    }
 }
 
 class Program
 {
     static void Main()
     {
-
-        CreditCard cc = new CreditCard();
-        cc.Pay();
-        JazzCash jz = new JazzCash();
-        jz.Pay();
-        Easypaisa ep = new Easypaisa();
-        ep.Pay();
+        Doctor dr = new Doctor();
+        dr.name = "Khan";
+        dr.id = 1;
+        dr.specs = "bones";
+        dr.TreatPatient();
+        dr.Work();
+        Nurse nr = new Nurse();
+        nr.name = "Nurse";
+        nr.id = 2;
+        nr.Shift = "day";
+        nr.AssistDoctor();
+        nr.Work();
     }
 }

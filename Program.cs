@@ -606,34 +606,83 @@
 // }
 // ----------------------- Inheritance ------------------
 
-class Person
-{
-    public string Name = "abc";
-    public int age = 90;
+// class Person
+// {
+//     public string Name = "abc";
+//     public int age = 90;
 
-    public void Show()
+//     public void Show()
+//     {
+//         Console.WriteLine("Name: " + Name);
+//         Console.WriteLine("Age: " + age);
+//     }
+// }
+
+// class Student : Person
+// {
+//     public string Course = "BSCS";
+//     public void Showw()
+//     {
+//         Console.WriteLine("Course: " + Course);
+//     }
+// }
+
+// class Teacher : Person
+// {
+//     public string Subject = "English";
+
+//     public void Teach()
+//     {
+//         Console.WriteLine("Teachers Subject is: " + Subject);
+//     }
+// }
+
+// class Program
+// {
+//     static void Main()
+//     {
+//         Student std = new Student();
+//         std.Show();
+//         std.Showw();
+
+//         Teacher tech = new Teacher();
+//         tech.Teach();
+
+
+//     }
+
+// }
+
+class Shape
+{
+    public virtual void Draw()
     {
-        Console.WriteLine("Name: " + Name);
-        Console.WriteLine("Age: " + age);
+        Console.WriteLine("Drawing Shapes");
+    }
+
+}
+class Circle : Shape
+{
+    public override void Draw()
+    {
+        Console.WriteLine("Drawing Circle");
+
     }
 }
-
-class Student : Person
+class Rectangle : Shape
 {
-    public string Course = "BSCS";
-    public void Showw()
+    public override void Draw()
     {
-        Console.WriteLine("Course: " + Course);
+        Console.WriteLine("Drawing Rectangle");
+
     }
 }
-
-class Teacher : Person
+class Triangle : Shape
 {
-    public string Subject = "English";
-
-    public void Teach()
+    public override void Draw()
     {
-        Console.WriteLine("Teachers Subject is: " + Subject);
+        Console.WriteLine("Drawing Triangle");
+
     }
 }
 
@@ -641,14 +690,11 @@ class Program
 {
     static void Main()
     {
-        Student std = new Student();
-        std.Show();
-        std.Showw();
-
-        Teacher tech = new Teacher();
-        tech.Teach();
-
-
+        Circle c = new Circle();
+        c.Draw();
+        Rectangle r = new Rectangle();
+        r.Draw();
+        Triangle t = new Triangle();
+        t.Draw();
     }
-
 }

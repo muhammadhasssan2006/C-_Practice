@@ -653,36 +653,79 @@
 
 // }
 
-class Shape
+// class Shape
+// {
+//     public virtual void Draw()
+//     {
+//         Console.WriteLine("Drawing Shapes");
+//     }
+
+// }
+// class Circle : Shape
+// {
+//     public override void Draw()
+//     {
+//         Console.WriteLine("Drawing Circle");
+
+//     }
+// }
+// class Rectangle : Shape
+// {
+//     public override void Draw()
+//     {
+//         Console.WriteLine("Drawing Rectangle");
+
+//     }
+// }
+// class Triangle : Shape
+// {
+//     public override void Draw()
+//     {
+//         Console.WriteLine("Drawing Triangle");
+
+//     }
+// }
+
+// class Program
+// {
+//     static void Main()
+//     {
+//         Circle c = new Circle();
+//         c.Draw();
+//         Rectangle r = new Rectangle();
+//         r.Draw();
+//         Triangle t = new Triangle();
+//         t.Draw();
+//     }
+// }
+
+// ---------------------------- Abstraction --------------------
+
+abstract class Payment
 {
-    public virtual void Draw()
+    public abstract void Pay();
+
+}
+class CreditCard : Payment
+{
+    public override void Pay()
     {
-        Console.WriteLine("Drawing Shapes");
+        Console.WriteLine("Payment using Credit card");
+    }
+}
+class JazzCash : Payment
+{
+    public override void Pay()
+    {
+        Console.WriteLine("Payment using JazzCash");
     }
 
 }
-class Circle : Shape
+class Easypaisa : Payment
 {
-    public override void Draw()
+    public override void Pay()
     {
-        Console.WriteLine("Drawing Circle");
-
-    }
-}
-class Rectangle : Shape
-{
-    public override void Draw()
-    {
-        Console.WriteLine("Drawing Rectangle");
-
-    }
-}
-class Triangle : Shape
-{
-    public override void Draw()
-    {
-        Console.WriteLine("Drawing Triangle");
-
+        Console.WriteLine("Payment using Easypaisa");
     }
 }
 
@@ -690,11 +733,12 @@ class Program
 {
     static void Main()
     {
-        Circle c = new Circle();
-        c.Draw();
-        Rectangle r = new Rectangle();
-        r.Draw();
-        Triangle t = new Triangle();
-        t.Draw();
+
+        CreditCard cc = new CreditCard();
+        cc.Pay();
+        JazzCash jz = new JazzCash();
+        jz.Pay();
+        Easypaisa ep = new Easypaisa();
+        ep.Pay();
     }
 }

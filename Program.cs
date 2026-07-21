@@ -847,6 +847,56 @@
 
 // emaple: 02
 
+// class Program
+// {
+//     static void Main()
+//     {
+//         try
+//         {
+
+//             Console.Write("Enter first num: ");
+//             int num1 = Convert.ToInt32(Console.ReadLine());
+//             Console.Write("Enter second num: ");
+//             int num2 = Convert.ToInt32(Console.ReadLine());
+//             int sum = num1 + num2;
+//             Console.WriteLine("Sum of your two nums is:" + sum);
+//         }
+//         catch (Exception ex)
+//         {
+//             Console.WriteLine(ex.Message);
+//         }
+
+//     }
+// }
+
+
+// example: 03 ========== Finally=================
+// Finally is a block that always executes whether an exception occurs or not.
+
+// class Program
+// {
+//     static void Main()
+//     {
+//         try
+//         {
+
+//             Console.Write("Enter a num: ");
+//             int num = Convert.ToInt32(Console.ReadLine());
+//             Console.WriteLine("your num: " + num);
+//         }
+//         catch (Exception ex)
+//         {
+//             Console.WriteLine(ex.Message);
+
+//         }
+//         finally
+//         {
+//             Console.WriteLine("Program Ended..");
+//         }
+//     }
+// }
+
+// example: 04
 class Program
 {
     static void Main()
@@ -854,17 +904,28 @@ class Program
         try
         {
 
-            Console.Write("Enter first num: ");
+            Console.Write("Enter first number: ");
             int num1 = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter second num: ");
+            Console.Write("Enter second number: ");
             int num2 = Convert.ToInt32(Console.ReadLine());
-            int sum = num1 + num2;
-            Console.WriteLine("Sum of your two nums is:" + sum);
-        }
-        catch
-        {
-            Console.WriteLine("invaild number");
-        }
+            if (num2 != 0)
+            {
+                int div = num1 / num2;
+                Console.WriteLine("Division of two nums is: " + div);
 
+            }
+            else
+            {
+                Console.WriteLine("Division by zero is not allowed.");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+        finally
+        {
+            Console.WriteLine("Program Finished");
+        }
     }
 }

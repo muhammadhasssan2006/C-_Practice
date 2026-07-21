@@ -827,20 +827,44 @@
 // ======================= Exception handling =================
 
 // example: 01
+// class Program
+// {
+//     static void Main()
+//     {
+//         try
+//         {
+//             Console.Write("Enter a number: ");
+
+//             int num = Convert.ToInt32(Console.ReadLine());
+//             Console.WriteLine("your num is: " + num);
+//         }
+//         catch
+//         {
+//             Console.WriteLine("Invalid number");
+//         }
+//     }
+// }
+
+// emaple: 02
+
 class Program
 {
     static void Main()
     {
         try
         {
-            Console.Write("Enter a number: ");
 
-            int num = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("your num is: " + num);
+            Console.Write("Enter first num: ");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter second num: ");
+            int num2 = Convert.ToInt32(Console.ReadLine());
+            int sum = num1 + num2;
+            Console.WriteLine("Sum of your two nums is:" + sum);
         }
         catch
         {
-            Console.WriteLine("Invalid number");
+            Console.WriteLine("invaild number");
         }
+
     }
 }

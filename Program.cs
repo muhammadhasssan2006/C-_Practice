@@ -747,78 +747,100 @@
 //          Smart Hospital Management System
 // =============================================================
 
-abstract class Employee
-{
+// abstract class Employee
+// {
 
-    private string Name = "";
-    private int Id;
+//     private string Name = "";
+//     private int Id;
 
-    public string name
-    {
-        get { return Name; }
-        set { Name = value; }
-    }
-    public int id
-    {
-        get { return Id; }
-        set { Id = value; }
-    }
-    public abstract void Work();
-}
-class Doctor : Employee
-{
-    private string Specialization = "";
-    public string specs
-    {
-        get { return Specialization; }
-        set { Specialization = value; }
-    }
-    public void TreatPatient()
-    {
-        Console.WriteLine("Doctor is treating a patient.");
+//     public string name
+//     {
+//         get { return Name; }
+//         set { Name = value; }
+//     }
+//     public int id
+//     {
+//         get { return Id; }
+//         set { Id = value; }
+//     }
+//     public abstract void Work();
+// }
+// class Doctor : Employee
+// {
+//     private string Specialization = "";
+//     public string specs
+//     {
+//         get { return Specialization; }
+//         set { Specialization = value; }
+//     }
+//     public void TreatPatient()
+//     {
+//         Console.WriteLine("Doctor is treating a patient.");
 
-    }
-    public override void Work()
-    {
-        Console.WriteLine("Doctor is working.");
+//     }
+//     public override void Work()
+//     {
+//         Console.WriteLine("Doctor is working.");
 
-    }
-}
-class Nurse : Employee
-{
-    private string shift = "";
-    public string Shift
-    {
-        get { return shift; }
-        set { shift = value; }
-    }
-    public void AssistDoctor()
-    {
-        Console.WriteLine("Nurse is assisting the doctor.");
+//     }
+// }
+// class Nurse : Employee
+// {
+//     private string shift = "";
+//     public string Shift
+//     {
+//         get { return shift; }
+//         set { shift = value; }
+//     }
+//     public void AssistDoctor()
+//     {
+//         Console.WriteLine("Nurse is assisting the doctor.");
 
-    }
-    public override void Work()
-    {
-        Console.WriteLine("Nurse is working.");
-    }
+//     }
+//     public override void Work()
+//     {
+//         Console.WriteLine("Nurse is working.");
+//     }
 
-}
+// }
 
+// class Program
+// {
+//     static void Main()
+//     {
+//         Doctor dr = new Doctor();
+//         dr.name = "Khan";
+//         dr.id = 1;
+//         dr.specs = "bones";
+//         dr.TreatPatient();
+//         dr.Work();
+//         Nurse nr = new Nurse();
+//         nr.name = "Nurse";
+//         nr.id = 2;
+//         nr.Shift = "day";
+//         nr.AssistDoctor();
+//         nr.Work();
+//     }
+// }
+
+
+// ======================= Exception handling =================
+
+// example: 01
 class Program
 {
     static void Main()
     {
-        Doctor dr = new Doctor();
-        dr.name = "Khan";
-        dr.id = 1;
-        dr.specs = "bones";
-        dr.TreatPatient();
-        dr.Work();
-        Nurse nr = new Nurse();
-        nr.name = "Nurse";
-        nr.id = 2;
-        nr.Shift = "day";
-        nr.AssistDoctor();
-        nr.Work();
+        try
+        {
+            Console.Write("Enter a number: ");
+
+            int num = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("your num is: " + num);
+        }
+        catch
+        {
+            Console.WriteLine("Invalid number");
+        }
     }
 }

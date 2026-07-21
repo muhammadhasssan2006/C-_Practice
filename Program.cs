@@ -897,6 +897,41 @@
 // }
 
 // example: 04
+// class Program
+// {
+//     static void Main()
+//     {
+//         try
+//         {
+
+//             Console.Write("Enter first number: ");
+//             int num1 = Convert.ToInt32(Console.ReadLine());
+//             Console.Write("Enter second number: ");
+//             int num2 = Convert.ToInt32(Console.ReadLine());
+//             if (num2 != 0)
+//             {
+//                 int div = num1 / num2;
+//                 Console.WriteLine("Division of two nums is: " + div);
+
+//             }
+//             else
+//             {
+//                 Console.WriteLine("Division by zero is not allowed.");
+//             }
+//         }
+//         catch (Exception ex)
+//         {
+//             Console.WriteLine(ex.Message);
+//         }
+//         finally
+//         {
+//             Console.WriteLine("Program Finished");
+//         }
+//     }
+// }
+
+// example: 05 ==================== throw ==========================
+
 class Program
 {
     static void Main()
@@ -904,28 +939,25 @@ class Program
         try
         {
 
-            Console.Write("Enter first number: ");
-            int num1 = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter second number: ");
-            int num2 = Convert.ToInt32(Console.ReadLine());
-            if (num2 != 0)
-            {
-                int div = num1 / num2;
-                Console.WriteLine("Division of two nums is: " + div);
+            int initial_balance = 5000;
 
-            }
-            else
+            Console.Write("Enter withdrawal ammount: ");
+            int ammount = Convert.ToInt32(Console.ReadLine());
+            if (ammount > initial_balance)
             {
-                Console.WriteLine("Division by zero is not allowed.");
+                throw new Exception("Insufficient Balance");
             }
+            Console.WriteLine("Withdrawal Successful");
+            Console.WriteLine("Remaining Balance: " + (initial_balance - ammount));
         }
         catch (Exception ex)
         {
             Console.WriteLine(ex.Message);
+
         }
         finally
         {
-            Console.WriteLine("Program Finished");
+            Console.WriteLine("Thank you for using our bank.");
         }
     }
 }
